@@ -105,3 +105,114 @@ body {
   font-size: .74rem;
   margin-top: 16px;
 }
+
+
+/* ===== Improved mobile responsiveness ===== */
+html, body { min-height: 100%; }
+body { min-height: 100dvh; overflow-x: hidden; }
+button { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+.page { min-height: 100dvh; }
+.screen { overflow: hidden; }
+#display { min-width: 0; }
+.keys { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+@media (max-width: 480px) {
+  .page { padding: 16px 12px; }
+
+  .calculator {
+    width: 100%;
+    padding: 16px;
+    border-radius: 23px;
+  }
+
+  .top-row { padding: 2px 2px 14px; }
+
+  .screen {
+    min-height: 108px;
+    padding: 15px;
+    border-radius: 17px;
+    margin-bottom: 12px;
+  }
+
+  #display { font-size: clamp(2rem, 12vw, 2.8rem); }
+
+  .keys { gap: 8px; }
+
+  .key {
+    min-height: 58px;
+    border-radius: 14px;
+    font-size: 1.08rem;
+  }
+
+  .hint {
+    font-size: .69rem;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .page { padding: 10px 8px; }
+
+  .calculator {
+    padding: 12px;
+    border-radius: 19px;
+  }
+
+  .top-row span { font-size: .66rem; }
+
+  .screen {
+    min-height: 92px;
+    padding: 12px;
+  }
+
+  .keys { gap: 7px; }
+
+  .key {
+    min-height: 52px;
+    border-radius: 12px;
+    font-size: 1rem;
+  }
+
+  .hint { font-size: .64rem; }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .page {
+    display: block;
+    padding: 10px;
+  }
+
+  .calculator {
+    width: min(560px, 100%);
+    margin-inline: auto;
+    padding: 12px 14px;
+  }
+
+  .top-row { padding-bottom: 8px; }
+
+  .screen {
+    min-height: 70px;
+    padding: 9px 12px;
+    margin-bottom: 8px;
+  }
+
+  .history {
+    min-height: 18px;
+    font-size: .75rem;
+  }
+
+  #display { font-size: 1.8rem; }
+
+  .keys { gap: 6px; }
+
+  .key {
+    min-height: 40px;
+    border-radius: 10px;
+    font-size: .95rem;
+  }
+
+  .hint {
+    margin-top: 7px;
+    font-size: .62rem;
+  }
+}
